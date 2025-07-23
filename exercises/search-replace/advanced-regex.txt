@@ -1,0 +1,129 @@
+# Advanced Regex and Substitution
+# Master complex patterns and replacements
+
+GOAL: Use advanced regex for powerful text transformations
+
+EXERCISE 1: Capture groups and backreferences
+Transform these function calls:
+console.log("User name: " + userName);
+console.log("Email: " + userEmail);
+console.log("Age: " + userAge);
+
+Target format:
+console.log(`User name: ${userName}`);
+console.log(`Email: ${userEmail}`);  
+console.log(`Age: ${userAge}`);
+
+Tasks:
+- Use capture groups: :%s/console\.log("\(.*\): " + \(.*\));/console.log(`\1: ${\2}`);/g
+- Practice identifying captured groups \1, \2, etc.
+
+EXERCISE 2: Multiple alternatives (|)
+Standardize these variable declarations:
+var userName = "john";
+let userAge = 25;
+const userEmail = "john@email.com";
+var isActive = true;
+
+Change all to 'const':
+Tasks:
+- Replace var or let: :%s/\(var\|let\)/const/g
+- Alternative syntax: :%s/var\|let/const/g
+
+EXERCISE 3: Character classes and quantifiers
+Clean up this messy data:
+Phone: 555-1234
+Phone:555-5678  
+Phone :   555-9012
+Phone:  555-3456
+
+Standardize format to "Phone: 555-xxxx":
+Tasks:
+- Remove extra spaces: :%s/Phone\s*:\s*/Phone: /g
+- Match digits: :%s/Phone: \(\d\{3\}-\d\{4\}\)/Phone: \1/g
+
+EXERCISE 4: Beginning and end anchors (^, $)
+Fix indentation in this code:
+    function test() {
+        console.log("test");
+        return true;
+    }
+
+Remove leading spaces from all lines:
+Tasks:
+- Remove start spaces: :%s/^\s\+//g
+- Remove trailing spaces: :%s/\s\+$//g
+- Add consistent indentation: :%s/^/    /g
+
+EXERCISE 5: Non-greedy matching
+Extract data from HTML:
+<div class="user">John Doe</div>
+<div class="email">john@example.com</div>
+<div class="role">Administrator</div>
+
+Extract just the content:
+Tasks:
+- Greedy match (wrong): :%s/<div.*>\(.*\)<\/div>/\1/g
+- Non-greedy (right): :%s/<div.\{-}>\(.\{-}\)<\/div>/\1/g
+- Compare the results
+
+EXERCISE 6: Lookahead and lookbehind (if supported)
+Transform this configuration:
+config.database.host = "localhost";
+config.database.port = 5432;
+config.server.host = "0.0.0.0";
+config.server.port = 8080;
+
+Add quotes around numbers:
+Tasks:
+- Find numbers not in quotes: :%s/\d\+/"&"/g
+- Use & to reference entire match
+
+EXERCISE 7: Complex real-world example
+Convert this JSON-like data:
+{name: "John", age: 30, city: "New York"}
+{name: "Alice", age: 25, city: "London"}  
+{name: "Bob", age: 35, city: "Tokyo"}
+
+To proper JSON:
+{"name": "John", "age": 30, "city": "New York"}
+
+Tasks:
+- Add quotes to keys: :%s/\([a-zA-Z]\+\):/"\1":/g
+- Handle multiple transformations in sequence
+- Test each step carefully
+
+EXERCISE 8: Global command with regex (:g)
+Find and modify lines matching patterns:
+// TODO: Fix this function
+function buggyCode() {}
+// TODO: Add error handling  
+function anotherFunction() {}
+// FIXME: Optimize performance
+function slowFunction() {}
+
+Tasks:
+- Find all TODO lines: :g/TODO/
+- Delete all TODO lines: :g/TODO/d
+- Add prefix to TODO lines: :g/TODO/s/^/PRIORITY: /
+- Copy TODO lines to end: :g/TODO/t$
+
+EXERCISE 9: Macro + regex combination
+Combine macros with complex substitutions:
+user_name,user_email,user_age
+john_doe,john@email.com,30
+alice_smith,alice@email.com,25
+
+Transform to objects:
+{name: "john_doe", email: "john@email.com", age: 30}
+
+Tasks:
+- Record macro that uses substitution
+- Apply to multiple lines
+- Handle edge cases
+
+PRO TIPS:
+- Test regex patterns with :s///n flag first (shows matches without replacing)
+- Use \v (very magic) to reduce escaping: :%s/\v(pattern)/replacement/g
+- \V (very nomagic) treats everything literally except \
+- Use :help pattern for full regex reference

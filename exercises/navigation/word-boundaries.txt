@@ -1,0 +1,36 @@
+# Word Boundary Navigation
+# Practice w, W, b, B, e, E, ge, gE motions
+
+GOAL: Master different word movement patterns
+
+EXERCISE 1: Basic word movements (w, b, e)
+Practice on this line with mixed punctuation:
+hello-world, this_is_a test! How are you? Fine, thanks.
+
+Tasks:
+- Move forward by words (w)
+- Move backward by words (b) 
+- Jump to word endings (e)
+
+EXERCISE 2: WORD movements (W, B, E)
+Compare word vs WORD on this line:
+file.txt some-data user@email.com /path/to/file $variable_name
+
+Try both w and W to see the difference!
+
+EXERCISE 3: Backward word endings (ge, gE)
+Start at the end and practice backward word-end jumps:
+The quick brown fox jumps over the lazy dog's back
+
+EXERCISE 4: Line navigation (0, ^, $, g_)
+Practice on these indented lines:
+    function calculateTotal() {
+        let sum = 0;
+        return sum;
+    }
+
+Tasks:
+- Jump to column 0: 0
+- Jump to first non-blank: ^  
+- Jump to line end: $
+- Jump to last non-blank: g_

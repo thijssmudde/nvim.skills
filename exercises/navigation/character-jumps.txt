@@ -1,0 +1,32 @@
+# Character Jump Exercises
+# Practice f, F, t, T motions and repetition with ; and ,
+
+GOAL: Practice jumping to specific characters efficiently
+
+EXERCISE 1: Forward character jumps (f)
+Navigate to each 'x' character in this line using f:
+The fox jumps over the box next to six mixed texts
+
+EXERCISE 2: Backward character jumps (F) 
+Start at the end and jump backward to each 'o':
+Hello world, how old are you? Don't go too slow now.
+
+EXERCISE 3: Till character jumps (t/T)
+Jump to just before/after these brackets using t and T:
+function calculate(a, b, c) { return (a + b) * c; }
+
+EXERCISE 4: Repetition with ; and ,
+Find all semicolons in this code block using f; then ; to repeat:
+let x = 5; let y = 10; let z = x + y; console.log(z);
+for (let i = 0; i < 10; i++) { sum += i; total *= 2; }
+
+EXERCISE 5: Mixed practice
+Navigate efficiently through this sentence hitting each target:
+"Practice makes perfect" - jump to: P, m, p, f, t (use various f/F/t/T)
+
+SOLUTIONS:
+Ex1: fx;fx;fx;fx;fx
+Ex2: $Fo;Fo;Fo;Fo
+Ex3: t(, t), t{, t}
+Ex4: f;;;; (then navigate second line)
+Ex5: fP, fm, fp, ff, ft

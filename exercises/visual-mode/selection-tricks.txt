@@ -1,0 +1,85 @@
+# Visual Selection Advanced Techniques
+# Practice gv, o, U and other visual mode enhancements
+
+GOAL: Master advanced visual selection manipulation
+
+EXERCISE 1: Re-selecting (gv)
+Practice with this paragraph:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Tasks:
+- Select some words visually, then press Escape
+- Type some other commands (like moving cursor)
+- Press gv to re-select the last visual selection
+- Try this with different selection types (v, V, Ctrl+v)
+
+EXERCISE 2: Selection direction (o)
+Work with this multi-line selection:
+First line of selection
+Second line here  
+Third line content
+Fourth line ending
+
+Tasks:
+- Start visual selection from "First" 
+- Extend to "ending" on last line
+- Press o to jump to the other end of selection
+- Extend selection in the opposite direction
+- Use o again to toggle back
+
+EXERCISE 3: Case transformation (U, u, ~)
+Transform case on this mixed text:
+hello WORLD this Is A tEsT cAsE
+JavaScript Python HTML CSS
+firstName lastName emailAddress
+
+Tasks:
+- Visually select words and press U (uppercase)
+- Select other words and press u (lowercase)  
+- Select mixed case and press ~ (toggle case)
+- Try with different selection types
+
+EXERCISE 4: Visual line selection tricks
+Practice on this code block:
+if (condition) {
+    console.log("true");
+    processData();
+    return result;
+} else {
+    console.log("false");
+    handleError();
+    return null;
+}
+
+Tasks:
+- Use V to select entire lines
+- Practice expanding line selection up/down
+- Use gv to re-select after operations
+- Combine with o to change selection direction
+
+EXERCISE 5: Mixed selection modes
+Combine different visual modes on this data:
+ID    Name         Email                Phone
+001   John Doe     john@email.com      555-1234
+002   Jane Smith   jane@email.com      555-5678
+003   Bob Johnson  bob@email.com       555-9012
+
+Tasks:
+- Start with character selection (v)
+- Switch to line selection (V)
+- Switch to block selection (Ctrl+v)
+- Practice transitioning between modes
+
+EXERCISE 6: Visual selection with text objects
+Combine visual mode with text objects:
+function calculate(a, b) {
+    const result = (a + b) * 2;
+    return "Result: " + result;
+}
+
+Tasks:
+- Start visual selection, then use text objects (viw, vi), vi", etc.)
+- Try vip to select paragraph visually
+- Combine with o to extend from different ends
+
+PRO TIP: Visual mode + text objects = incredibly powerful selection!

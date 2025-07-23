@@ -1,0 +1,67 @@
+# Paragraph Text Objects
+# Practice cip, cap, dip, dap, etc.
+
+GOAL: Master paragraph-level text object manipulation
+
+EXERCISE 1: Basic paragraph objects
+Practice on these separate paragraphs:
+
+This is the first paragraph. It contains multiple sentences that form a complete thought. The paragraph discusses various topics.
+
+This is the second paragraph with different content. It also has multiple sentences and covers different subject matter.
+
+This third paragraph is shorter but still complete.
+
+Tasks:
+- Position cursor anywhere in first paragraph and try cip
+- Try cap to see the difference (includes blank lines)
+- Use dip and dap to delete paragraphs
+- Use yip to yank paragraphs
+
+EXERCISE 2: Code paragraphs
+Work with these code blocks:
+
+function calculateTotal(items) {
+    let total = 0;
+    for (let item of items) {
+        total += item.price;
+    }
+    return total;
+}
+
+function processData(data) {
+    const filtered = data.filter(item => item.active);
+    const sorted = filtered.sort((a, b) => a.name.localeCompare(b.name));
+    return sorted;
+}
+
+Tasks:
+- Use cip to change entire function bodies
+- Use cap to include function signatures
+- Try vip to visually select paragraphs
+
+EXERCISE 3: Mixed content paragraphs
+Practice with different paragraph types:
+
+# Header 1
+This paragraph comes after a header. It should be treated as a separate paragraph from the header above.
+
+- List item 1
+- List item 2  
+- List item 3
+
+Another paragraph after the list. This demonstrates how vim identifies paragraph boundaries with different content types.
+
+```code
+Some code block here
+Multiple lines
+```
+
+Final paragraph after code block.
+
+Tasks:
+- Practice identifying what vim considers a "paragraph"
+- Use cip on different content types
+- Notice how blank lines affect paragraph selection
+
+TIP: Paragraphs are separated by blank lines or different content types!

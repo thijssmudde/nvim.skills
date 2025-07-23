@@ -1,0 +1,112 @@
+# Macro Recording and Execution
+# Practice qa, q, @a, @@, 5@a patterns
+
+GOAL: Master macro recording for repetitive tasks
+
+EXERCISE 1: Simple text transformation
+Transform these lines from this format:
+john
+alice  
+bob
+mary
+
+To this format:
+Name: john
+Name: alice
+Name: bob  
+Name: mary
+
+Tasks:
+- Record macro: qa
+- Perform edit on first line: IName: <Esc>j
+- Stop recording: q
+- Execute on remaining lines: @a @a @a
+- Or execute multiple times: 3@a
+
+EXERCISE 2: Code formatting macro
+Format these variable declarations consistently:
+let x=5
+let name="john"
+let active=true
+let count=0
+
+Target format:
+let x = 5;
+let name = "john";
+let active = true;
+let count = 0;
+
+Tasks:
+- Record macro to add spaces around = and ; at end
+- Apply to all lines
+- Practice @@to repeat last macro
+
+EXERCISE 3: List processing
+Convert this data:
+apple,red,sweet
+banana,yellow,soft
+cherry,red,tart
+grape,purple,juicy
+
+Into HTML list items:
+<li>apple (red, sweet)</li>
+<li>banana (yellow, soft)</li>
+<li>cherry (red, tart)</li>
+<li>grape (purple, juicy)</li>
+
+Tasks:
+- Record complex macro with multiple steps
+- Use search/replace within macro if needed
+- Test on first line, then apply to rest
+
+EXERCISE 4: Multiple macro registers
+Create different macros for different tasks:
+
+Text to process:
+function one() { return 1; }
+function two() { return 2; }
+function three() { return 3; }
+
+Tasks:
+- Record macro 'a' to add console.log at start of function
+- Record macro 'b' to add semicolon at end of line
+- Record macro 'c' to wrap function in try/catch
+- Apply different macros to different lines
+
+EXERCISE 5: Macro with counts
+Process this numbered list:
+1. First item
+2. Second item
+3. Third item
+4. Fourth item
+5. Fifth item
+
+Add "TODO: " prefix to each:
+1. TODO: First item
+2. TODO: Second item
+etc.
+
+Tasks:
+- Record macro: qaTODO: <Esc>jq
+- Execute 5 times: 5@a
+- Or execute on remaining: 4@a
+
+EXERCISE 6: Advanced macro debugging
+If a macro goes wrong, practice on this:
+def function_one():
+def function_two():
+def function_three():
+
+Goal: Add "    pass" to each function
+
+Tasks:
+- Record macro that might fail
+- Debug by testing on one line first
+- Re-record if necessary: qa (overwrites previous)
+- Apply once working correctly
+
+PRO TIPS:
+- Test macros on one item before applying to all
+- Use relative movements (j, w) not absolute positions  
+- Include navigation to next item in your macro
+- qa overwrites register 'a', so you can re-record easily

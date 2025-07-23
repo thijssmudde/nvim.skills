@@ -1,0 +1,63 @@
+# Text Objects Practice
+# Master ciw, caw, ci", ca", ci), ca), etc.
+
+GOAL: Practice text objects for efficient editing
+
+EXERCISE 1: Word objects (iw vs aw)
+Practice on these words with different spacing:
+hello    world    test    example    final
+
+Tasks:
+- ciw on each word (change inside word)
+- caw on each word (change around word - includes spaces)
+- diw vs daw to see the difference
+
+EXERCISE 2: Quote objects (i" vs a")
+Edit these quoted strings:
+"Hello world" and "this is a test" with "multiple quotes"
+'Single quotes' and 'another example' here
+`Backtick quotes` for `template strings`
+
+Tasks:
+- ci" to change inside double quotes
+- ca" to change around quotes (includes quotes)
+- Try with single quotes: ci' and ca'
+- Try with backticks: ci` and ca`
+
+EXERCISE 3: Parentheses objects (i) vs a))
+Modify these function calls:
+calculate(a, b, c)
+print("hello")
+func(nested(inner(call)))
+max(1, 2, 3, 4, 5)
+
+Tasks:
+- ci) to change inside parentheses
+- ca) to change around parentheses  
+- di) vs da) to delete
+
+EXERCISE 4: Bracket and brace objects
+Work with these data structures:
+[1, 2, 3, 4, 5]
+{name: "John", age: 30}
+array[index]
+object.method({key: "value"})
+
+Tasks:
+- ci] and ca] for square brackets
+- ci} and ca} for curly braces
+- Mix and match with different operations (c, d, y, v)
+
+EXERCISE 5: HTML/XML tag objects (it vs at)
+Edit these HTML elements:
+<div>Content here</div>
+<p>Paragraph text</p>
+<span class="highlight">Important text</span>
+<a href="link">Click here</a>
+
+Tasks:
+- cit to change inside tag
+- cat to change around tag (includes tags)
+- dit vs dat to delete
+
+ADVANCED: Try nested structures and see how vim selects!

@@ -1,0 +1,114 @@
+# Search and Replace Mastery
+# Practice *, #, g*, g#, :s patterns
+
+GOAL: Master vim's powerful search and replace capabilities
+
+EXERCISE 1: Word search shortcuts (*, #)
+Practice on this code with repeated words:
+function calculateTotal(total, items) {
+    let newTotal = total;
+    for (let item of items) {
+        newTotal += item.total;
+    }
+    return newTotal;
+}
+
+Tasks:
+- Position cursor on "total" and press * (search forward)
+- Press n to go to next occurrence
+- Press N to go to previous occurrence
+- Try # to search backward
+- Use different words to see the pattern
+
+EXERCISE 2: Partial word search (g*, g#) 
+Work with words that contain other words:
+let user = getUser();
+let userName = user.name;  
+let userEmail = user.email;
+let userData = user.data;
+
+Tasks:
+- Position on "user" and try * vs g*
+- Notice how * finds whole words only
+- g* finds partial matches within words
+- Try g# for backward partial search
+
+EXERCISE 3: Basic substitution (:s)
+Replace patterns in this text:
+The cat sat on the mat. The cat was happy.
+Another cat joined the first cat on the mat.
+
+Tasks:
+- Replace first "cat" on current line: :s/cat/dog/
+- Replace all "cat" on current line: :s/cat/dog/g
+- Replace in specific range: :1,2s/cat/dog/g
+- Replace in entire file: :%s/cat/dog/g
+
+EXERCISE 4: Interactive replacement (:s with /c flag)
+Selectively replace in this mixed content:
+let count = 0;
+function increaseCount() { count++; }
+function decreaseCount() { count--; }
+const totalCount = count * 2;
+
+Tasks:
+- Use :%s/count/number/gc
+- For each match, choose:
+  - y (yes, replace)
+  - n (no, skip)
+  - a (all remaining) 
+  - q (quit)
+  - l (replace this one and quit)
+
+EXERCISE 5: Using last search pattern (:s//)
+Combine search with replace:
+const API_BASE = 'https://api.example.com';
+const API_USERS = API_BASE + '/users';
+const API_POSTS = API_BASE + '/posts';
+
+Tasks:
+- Search for "API": /API
+- Replace using last search: :%s//ENDPOINT/g
+- Or with confirmation: :%s//ENDPOINT/gc
+
+EXERCISE 6: Advanced substitution patterns
+Work with more complex replacements:
+Email: john@example.com
+Email: alice@company.org  
+Email: bob@test.net
+
+Tasks:
+- Replace domain only: :%s/@.*\.com/@newdomain.com/g
+- Use capture groups: :%s/Email: \(.*\)@.*/Contact: \1/g
+- Practice with different regex patterns
+
+EXERCISE 7: Case-sensitive vs insensitive
+Mix of different cases:
+JavaScript is great
+javascript is powerful  
+JAVASCRIPT is everywhere
+Javascript rocks
+
+Tasks:
+- Normal search (case-sensitive): /javascript
+- Case-insensitive search: /javascript\c
+- Case-insensitive replace: :%s/javascript/TypeScript/gi
+- Use \C to force case-sensitive: /javascript\C
+
+EXERCISE 8: Word boundaries in search
+Avoid partial matches:
+let user = getUser();
+let superuser = getSuperUser();
+let username = user.name;
+
+Tasks:
+- Search for whole word "user": /\<user\>
+- Replace whole words only: :%s/\<user\>/person/g
+- Compare with: :%s/user/person/g (replaces partial)
+
+PRO TIPS:
+- Use :noh to clear search highlighting
+- & repeats last :s command
+- g& repeats last :s command on all lines
+- :s/// (empty pattern) uses last search
+- Add /I flag to show match count without replacing

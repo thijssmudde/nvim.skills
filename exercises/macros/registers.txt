@@ -1,0 +1,125 @@
+# Register Management
+# Practice "ay, "ap, "0p, "+y, "*y techniques
+
+GOAL: Master vim's register system for advanced copy/paste
+
+EXERCISE 1: Named registers (a-z)
+Practice storing different content in different registers:
+
+Text snippets:
+console.log("debug");
+import React from 'react';
+const [state, setState] = useState();
+function handleClick() {}
+
+Tasks:
+- Store first line in register 'a': "ay
+- Store second line in register 'b': "by  
+- Store third line in register 'c': "cy
+- Store fourth line in register 'd': "dy
+- Paste from specific registers: "ap, "bp, "cp, "dp
+
+EXERCISE 2: The yank register (0)
+Understand the difference between yank and delete:
+
+Sample text:
+This line will be yanked
+This line will be deleted
+This line will be yanked again
+This line will also be deleted
+
+Tasks:
+- Yank first line: yy
+- Delete second line: dd
+- Yank third line: yy  
+- Delete fourth line: dd
+- Paste from yank register: "0p (ignores deletions)
+- Compare with regular paste: p
+
+EXERCISE 3: System clipboard (+, *)
+Practice system integration:
+
+Text to copy to system:
+export const API_URL = 'https://api.example.com';
+const token = localStorage.getItem('auth-token');
+
+Tasks:
+- Copy to system clipboard: "+yy
+- Copy to selection clipboard: "*yy
+- Switch to another application and paste
+- Return to vim and paste from system: "+p
+- Paste from selection: "*p
+
+EXERCISE 4: Register combinations
+Work with multiple pieces of data:
+
+User data:
+John Doe
+john@email.com  
+Manager
+New York
+
+Tasks:
+- Store name in register 'n': "ny
+- Store email in register 'e': "ey
+- Store title in register 't': "ty
+- Store city in register 'c': "cy
+- Create formatted output using registers
+
+EXERCISE 5: Register inspection
+View and manage your registers:
+
+Commands to practice:
+- :registers (or :reg) - view all registers
+- :reg a - view specific register
+- Clear register by overwriting with empty: "a y (on empty line)
+
+Practice text:
+Sample line one
+Sample line two
+Sample line three
+
+Tasks:
+- Store different lines in different registers
+- Use :reg to inspect contents
+- Clear specific registers
+- Re-populate with new content
+
+EXERCISE 6: Advanced register tricks
+Complex scenarios:
+
+Code template:
+const COMPONENT_NAME = () => {
+  return (
+    <div>CONTENT</div>
+  );
+};
+
+Tasks:
+- Store component name in register 'n'
+- Store content in register 'c'  
+- Use registers to quickly create multiple components
+- Practice "Ny to append to register (uppercase)
+
+EXERCISE 7: Macro + register combination
+Combine macros with register management:
+
+Data to process:
+apple
+banana
+cherry
+
+Target: Create both JSON and XML from each item
+
+Tasks:
+- Store JSON template in register 'j'
+- Store XML template in register 'x'  
+- Create macro that uses both registers
+- Apply to transform all items
+
+PRO TIPS:
+- Registers persist between vim sessions
+- "_ is the black hole register (discards content)
+- ". register contains last inserted text
+- "% contains current filename
+- Use uppercase register names (A-Z) to append instead of replace

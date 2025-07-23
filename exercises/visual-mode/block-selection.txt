@@ -1,0 +1,81 @@
+# Visual Block Mode Exercises
+# Master Ctrl+v for column editing and multi-line operations
+
+GOAL: Practice visual block mode for powerful multi-line editing
+
+EXERCISE 1: Basic column selection
+Practice selecting columns in this aligned data:
+Name        Age    City
+John        25     London
+Alice       30     Paris  
+Bob         22     Tokyo
+Mary        28     Berlin
+
+Tasks:
+- Use Ctrl+v to select the "Age" column
+- Use Ctrl+v to select the "City" column
+- Practice expanding selection with arrows
+
+EXERCISE 2: Column insertion (I in visual block)
+Add prefixes to these lines:
+apple
+banana
+cherry
+date
+elderberry
+
+Tasks:
+- Select first column with Ctrl+v
+- Press I and type "fruit: " 
+- Exit insert mode to apply to all lines
+- Try selecting middle positions and inserting
+
+EXERCISE 3: Column appending (A in visual block)
+Add suffixes to these file names:
+document
+image
+video
+audio
+text
+
+Tasks:  
+- Select to end of lines with Ctrl+v$
+- Press A and type ".txt"
+- Try appending different extensions
+
+EXERCISE 4: Code formatting
+Align these variable declarations:
+let x=5;
+let variableName=10;
+let a=15;
+let anotherLongName=20;
+
+Tasks:
+- Use visual block to select around = signs
+- Delete and realign consistently
+- Add consistent spacing
+
+EXERCISE 5: Comment blocks
+Add comments to this code:
+function test() {
+    console.log("test");
+    return true;
+}
+
+Tasks:
+- Select the function body with Ctrl+v
+- Use I to add // at the beginning
+- Practice removing comments the same way
+
+EXERCISE 6: Data transformation
+Transform this CSV-like data:
+john,25,developer
+alice,30,designer  
+bob,22,manager
+
+Into this format:
+Name: john, Age: 25, Role: developer
+Name: alice, Age: 30, Role: designer
+Name: bob, Age: 22, Role: manager
+
+Use visual block mode and substitutions!
